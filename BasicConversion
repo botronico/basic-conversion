@@ -1,0 +1,66 @@
+def meters_to_kilometers(meters):
+    return meters / 1000
+
+def kilometers_to_meters(kilometers):
+    return kilometers * 1000
+
+def miles_to_kilometers(miles):
+    return miles * 1.60934
+
+def kilometers_to_miles(kilometers):
+    return kilometers / 1.60934
+
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+# Top-level script code to run the conversion calculator
+print("Select conversion type:")
+print("1. Length")
+print("2. Temperature")
+
+conversion_type = input("Enter choice (1/2): ")
+
+if conversion_type == '1':
+    print("Select length conversion:")
+    print("1. Meters to Kilometers")
+    print("2. Kilometers to Meters")
+    print("3. Miles to Kilometers")
+    print("4. Kilometers to Miles")
+
+    length_choice = input("Enter choice (1/2/3/4): ")
+
+    if length_choice in ['1', '2', '3', '4']:
+        value = float(input("Enter the value to convert: "))
+
+        if length_choice == '1':
+            print(f"{value} meters = {meters_to_kilometers(value)} kilometers")
+        elif length_choice == '2':
+            print(f"{value} kilometers = {kilometers_to_meters(value)} meters")
+        elif length_choice == '3':
+            print(f"{value} miles = {miles_to_kilometers(value)} kilometers")
+        elif length_choice == '4':
+            print(f"{value} kilometers = {kilometers_to_miles(value)} miles")
+    else:
+        print("Invalid input")
+
+elif conversion_type == '2':
+    print("Select temperature conversion:")
+    print("1. Celsius to Fahrenheit")
+    print("2. Fahrenheit to Celsius")
+
+    temp_choice = input("Enter choice (1/2): ")
+
+    if temp_choice in ['1', '2']:
+        value = float(input("Enter the temperature to convert: "))
+
+        if temp_choice == '1':
+            print(f"{value} Celsius = {celsius_to_fahrenheit(value)} Fahrenheit")
+        elif temp_choice == '2':
+            print(f"{value} Fahrenheit = {fahrenheit_to_celsius(value)} Celsius")
+    else:
+        print("Invalid input")
+else:
+    print("Invalid input")
